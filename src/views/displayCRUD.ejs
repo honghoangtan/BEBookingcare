@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <row>
+
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phonenumber</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">RoleId</th>
+                        <th scope="col">PositionId</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < dataTable.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= dataTable[i].id %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].email%>
+                            </td>
+                            <td>
+                                <%= dataTable[i].firstName %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].lastName %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].address %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].phonenumber %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].gender %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].image %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].roleId %>
+                            </td>
+                            <td>
+                                <%= dataTable[i].positionId %>
+                            </td>
+                            <td class="d-flex">
+                                <button class="btn btn-warning mx-3">
+                                    <a href="/edit-crud?id=<%= dataTable[i].id %>">Edit</a>
+                                </button>
+                                <button class="btn btn-danger">
+                                    <a href="/delete-crud?id=<%= dataTable[i].id %>">Delete</a>
+                                </button>
+                            </td>
+                        </tr>
+                        <% } %>
+
+                </tbody>
+            </table>
+        </row>
+
+    </div>
+</body>
+
+</html>
